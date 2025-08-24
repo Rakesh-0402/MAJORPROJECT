@@ -1,0 +1,220 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    flex:1;
+}
+
+
+/* nav bar*/
+.navbar{
+    height:5rem;
+    background-color: white;
+}
+
+.fa-compass{
+    color:#fe424d;
+    font-size: 2rem;
+}
+/* important is used to override the style of bootstrap*/
+.nav-link{
+    color:#222222 !important;
+}
+
+/*footer*/
+footer{
+    width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+
+.f-info{
+    width:100%;
+    height:8rem;
+    background-color: #ebebeb;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    
+}
+
+.f-info-links,.f-info-socials ,.f-info-brand{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.f-info-socials i{
+     font-size: 1.2rem;
+    margin-right: 1rem;
+
+}
+
+/*cards*/
+.listing-card{
+    border :none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width:100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding:0 !important;
+}
+.card-text p{
+    font-weight: 400 !important;
+}
+
+.listing-link{
+    text-decoration: none;
+}
+
+/*card hover*/
+.card-img-overlay:hover{
+    opacity:0.2;
+    background-color: white;
+}
+/*new page*/
+.add-btn{
+    background-color: #fe424d !important;
+    border:none !important
+}
+
+/*show-page*/
+.show-img{
+    height:30vh;
+}
+
+.btns{
+    display:flex;
+}
+
+.show-card{
+    padding-left:0;
+    padding-right: 0;
+}
+
+.img-thumbnail {
+   width: 250px;
+   height: 250px;
+   object-fit: cover;
+}
+
+
+/* Map container styling */
+#map {
+  height: 400px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+/* Controls (zoom, layers, search) */
+.leaflet-control {
+  border: none !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+  background-color: #fff !important;
+  margin: 8px !important;
+}
+
+/* Zoom buttons */
+.leaflet-control-zoom a {
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 20px;
+  color: #222;
+  text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+.leaflet-control-zoom a:hover {
+  background: #f2f2f2;
+}
+
+/* Search bar */
+.leaflet-control-geocoder {
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+  overflow: hidden;
+}
+.leaflet-control-geocoder input {
+  padding: 10px 14px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Airbnb-style marker */
+.airbnb-marker .marker-inner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* Pegman icon styled like Airbnb */
+.pegman-marker .pegman-inner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FF5A5F;   /* Airbnb pink */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+/* Hover / drag effect */
+.pegman-marker .pegman-inner:hover {
+  transform: scale(1.1);
+  background: #FFC300;
+}
+
+.filter {
+  text-align: center;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  opacity: 0.7;
+  text-decoration: none;
+  color: #444;
+}
+
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.filter.active {
+  opacity: 1;
+  color: black;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
