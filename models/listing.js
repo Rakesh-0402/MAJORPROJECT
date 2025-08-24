@@ -39,8 +39,11 @@ const listingSchema =new mongoose.Schema({
         type:String,
         enum: ["Trending", "Rooms", "Iconic cities", "Mountains", "Castles", "Amazing pools", "Farms", "Camping","Domes","Boat"],
         required:true,
-    }
-})
+    },
+} , { timestamps: true });
+
+// Index for geospatial queries
+listingSchema.index({ geometry: "2dsphere" });
 //post mongoose middleware
 listingSchema.post("findOneAndDelete" ,async(listing)=>{
     if(listing){
