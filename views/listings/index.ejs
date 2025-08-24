@@ -89,6 +89,7 @@
         <a href="/listings/<%= listing._id %>" class="listing-link">
           <div class="card listing-card">
              <img 
+             loading="lazy"
              src="<%= listing.image.url%>" 
              class="card-img-top" 
              alt="listing_image"
@@ -100,7 +101,7 @@
              <p class="card-text">
                 <b><%= listing.title %></b> <br>
                  &#8377;<%= listing.price.toLocaleString("en-IN") %>/night
-                 <i class="tax-info" id >&nbsp; &nbsp;  +18% GST</i>
+                 <span class="tax-info">&nbsp;&nbsp;+18% GST</span>
             </p>
         </div>
      </div>
@@ -113,7 +114,7 @@
    let taxSwitch =document.getElementById("switchCheckDefault");
       taxSwitch.addEventListener("click",()=>{
          let taxInfo =document.getElementsByClassName("tax-info");
-         for (info of taxInfo){
+         for (let info of taxInfo){
             if(info.style.display!= "inline"){
             info.style.display ="inline"
             } else{
