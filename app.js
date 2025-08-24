@@ -3,7 +3,7 @@
 console.log(process.env.SECRET);
 const express=require("express");
 const app=express();
-const port=8080;
+const port=process.env.PORT || 8080;
 const mongoose=require("mongoose");
 const path =require("path");
 const CustomError =require("./utils/CustomError.js");
@@ -139,6 +139,10 @@ app.get("/get-session", (req, res) => {
     } else {
         res.send("No active session found");
     }
+});
+
+app.get("/", (req, res) => {
+  res.send("✅ Server is running successfully on Render!");
 });
 
 app.use((req,res,next)=>{
