@@ -10,11 +10,11 @@ module.exports.addReview =async(req,res)=>{
         let {rating,comment}=req.body;
         console.log(req.body);
         let review = new Review({rating,comment,author:req.user._id});
-        //console.log(review);
         await review.save();
+        
         listing.reviews.push(review);
         await listing.save();
-        console.log("review added");
+
         req.flash("success" ,"New Review added");
         res.redirect(`/listings/${listing._id}`);
         
