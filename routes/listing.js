@@ -9,7 +9,7 @@ const multer =require("multer");
 const {storage} =require("../cloudConfig.js");
 const upload =multer({storage});//multer stores the files in wanderlust_DEV folder in cloudinary
 
-//combining index route and create route bcz request is coming on same path
+//combining index route and create route 
 router.route("/")
       .get(wrapAsync(listingController.index))
       .post(
