@@ -32,4 +32,5 @@ const initDB = async()=>{
   } catch (err){
       console.error("Error initializing DB:", err);
   } 
+};
 initDB();
