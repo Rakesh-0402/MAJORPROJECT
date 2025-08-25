@@ -16,9 +16,9 @@ const session=require("express-session");
 const MongoStore =require('connect-mongo');
 
 // Routes
-const listingRoutes = require("./routes/listings");
-const reviewRoutes = require("./routes/reviews");
-const userRoutes = require("./routes/users");
+const listingRoutes = require("./routes/listing.js");
+const reviewRoutes = require("./routes/review.js");
+const userRoutes = require("./routes/user.js");
 
 const dbURL= process.env.ATLASDB_URL;
 //connection 
