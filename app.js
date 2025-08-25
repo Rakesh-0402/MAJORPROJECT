@@ -83,7 +83,7 @@ app.use((req, res, next) => {
 
 //express router
 app.use("/listings" ,listingRoutes);
-app.use("/reviews", reviewRoutes);
+app.use("/listings/:id/reviews", reviewRoutes);
 app.use("/" ,userRoutes);
 
 // error handling middleware
