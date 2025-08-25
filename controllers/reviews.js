@@ -1,4 +1,4 @@
-const Review =require("../models/review.js");
+const Review =require("../models/review");
 const Listing= require("../models/listing.js");
 const CustomError =require("../utils/CustomError.js");
 
