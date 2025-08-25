@@ -1,6 +1,6 @@
 
 const Listing =require("./models/listing");
-const Review =require("./models/reviews.js");
+const Review =require("./models/review.js");
 const CustomError =require("./utils/CustomError.js");
 const{ListingSchema,reviewSchema} =require("./schema.js");
 // server side validation for listing
