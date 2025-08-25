@@ -39,6 +39,11 @@ router.route("/:id")
 //edit route
 router.get("/:id/edit", isLoggedIn ,isOwner,wrapAsync(listingController.renderEditForm))
  //
+router.stack.forEach(r => {
+  if (r.route) {
+    console.log(r.route.path);
+  }
+});
 
 
 module.exports =router;
