@@ -26,7 +26,6 @@ module.exports.index =async (req,res)=>{
        if (!listing) {
         req.flash("error" ," Listing you requested for does not exist!");
        return res.redirect("/listings");
-       // throw new CustomError(404, "Listing not found");
        }
      res.render("listings/show.ejs",{listing});
 }
@@ -62,7 +61,8 @@ module.exports.renderEditForm =async (req,res)=>{
     let {id}=req.params;
     let listing =await Listing.findById(id);
     if (!listing) {
-        throw new CustomError(404, "Listing not found");
+        req.flash("error", "Listing not found");
+        return res.redirect("/listings");
     }
     let originalImageUrl =listing.image.url;
     originalImageUrl =originalImageUrl.replace("/upload", "/upload/w_250,h_250,c_fill");

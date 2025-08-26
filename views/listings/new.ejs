@@ -4,29 +4,26 @@
       <div class="col-8 offset-2">
          <h3> <b>Create a new Listing</b></h3>
         <form method="POST" action="/listings"  class="needs-validation" novalidate enctype="multipart/form-data">
-        <div>
+        <div class="mb-3">
              <label for="title" class="form-label">Title</label>
-             <input name="title" placeholder="enter title" type="text" class="form-control" required >
+             <input id="title" name="title" placeholder="enter title" type="text" class="form-control" required >
              <div class="valid-feedback">Title looks good!</div>
         </div>
-        <br>
        
-        <div>
+        <div class="mb-3">
           <label for="description" class="form-label">Description</label>  
-          <textarea name="description" placeholder="enter description"class="form-control" required ></textarea> 
+          <textarea name="description" placeholder="enter description"class="form-control" rows="3" required ></textarea> 
           <div class="invalid-feedback">Please enter a short description </div>
         </div>
-        <br>
 
-         <div>
+         <div class="mb-3">
             <label for="image" class="form-label">Upload Image</label> 
             <input  name="image"type="file" class="form-control" required> 
         </div>
-        <br>
-    <div class="row">
+    <div class="row mb-3">
          <div class="col-md-4">
             <label for="price" class="form-label">Price</label>  
-            <input name="price" placeholder="enter price"  class="form-control" required>
+            <input name="price" type="number" placeholder="enter price"  class="form-control" required>
             <div class="invalid-feedback">Please enter a valid price</div>
          </div>
         
@@ -36,17 +33,15 @@
             <div class="invalid-feedback">Country name should be valid</div>
         </div>
     </div>
-    <br>
-        <div>
+        <div class="mb-3">
            <label for="location" class="form-label">Location</label> 
            <input name="location" placeholder="enter location" type="text" class="form-control" required> 
            <div class="invalid-feedback">Location name should be valid</div>
         </div>
-        <br>
-         <div>
+         <div class="mb-3">
                <label for="category" class="form-label">Category</label>
                <select name="category" class="form-control" required>
-                  <option value="">Select a Category</option>
+                  <option value="" selected>Select a Category</option>
                   <option value="Trending">Trending</option>
                   <option value="Rooms">Rooms</option>
                   <option value="Iconic cities">Iconic cities</option>
@@ -60,7 +55,6 @@
                </select>
                <div class="invalid-feedback">Please select a category</div>
             </div>
-            <br>
         <button class="btn btn-dark add-btn">Add</button>
         <br><br>
     </form>
