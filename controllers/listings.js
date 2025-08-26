@@ -49,7 +49,14 @@ module.exports.createListing=async (req,res ,next)=>{
         category,
     });
        newListing.owner =req.user._id;
+       if(req.file){
        newListing.image ={url, filename};
+       } else{
+           newListing.image ={
+               url:"https://res.cloudinary.com/dcthudr8s/image/upload/v1756224251/wanderlust_DEV/kc2dy9ety5jo4tpyvjw1.webp",
+               filename:"default"
+           };
+       }
 
        let coordinates = await geocodeLocation(location, country);
        newListing.geometry={type: "Point", coordinates} ;
