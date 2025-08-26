@@ -21,6 +21,7 @@ const reviewRoutes = require("./routes/reviews.js");
 const userRoutes = require("./routes/users.js");
 
 const dbURL= process.env.ATLASDB_URL;
+console.log(dbURL)
 //connection 
 main()
 .then(()=>{

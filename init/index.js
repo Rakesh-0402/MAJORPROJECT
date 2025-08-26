@@ -1,8 +1,9 @@
-require("dotenv").config();
+require("dotenv").config({ path: __dirname + "/../.env" });
 const mongoose =require("mongoose");
 let {data} = require("./data.js");
 const Listing= require("../models/listing.js");
 const geocodeLocation = require("../utils/geocode");
+const dbURL= process.env.ATLASDB_URL;
 main()
 .then(()=>{
     console.log("connected to DB");
@@ -10,7 +11,7 @@ main()
 .catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect(process.env.ATLASDB_URL);
+  await mongoose.connect(dbURL);
 }
 
 //function to delete all data and insert sample data
