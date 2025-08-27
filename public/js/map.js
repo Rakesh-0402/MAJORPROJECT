@@ -18,11 +18,11 @@
     attribution: '&copy; OpenStreetMap contributors'
   });
   
-  const satellite = L.tileLayer(
-    'https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-      subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-      attribution: '&copy; Google Maps'
-  });
+ const satellite = L.tileLayer(
+  'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+  { attribution: 'Tiles &copy; Esri &mdash; Source: Esri, Earthstar Geographics' }
+);
+
 
   osm.addTo(map); //Loads OSM by default when map starts.
 
