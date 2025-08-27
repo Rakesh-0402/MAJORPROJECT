@@ -20,7 +20,7 @@ const initDB = async()=>{
     await Listing.deleteMany({});
     for (let obj of data) {
       const coordinates = await geocodeLocation(obj.location, obj.country);
-      obj.owner = "68a4bb69ce87b79e85243bd0"; // default owner
+      obj.owner = "68aac5214f995e44bca3380d"; // default owner
       obj.geometry = { type: "Point", coordinates };
       // Ensure category exists
       if (!obj.category) {

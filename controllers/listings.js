@@ -31,8 +31,6 @@ module.exports.index =async (req,res)=>{
 }
 
 module.exports.createListing=async (req,res ,next)=>{
-       let url = req.file.path;
-       let filename  =req.file.filename;
        let {title,description,price,location,country,category}=req.body;
       const allowedCategories = Listing.schema.path("category").enumValues;
        if (!allowedCategories.includes(category)) {
@@ -49,7 +47,17 @@ module.exports.createListing=async (req,res ,next)=>{
         category,
     });
        newListing.owner =req.user._id;
-       newListing.image ={url, filename};
+       if(req.file){
+       newListing.image ={
+           url:req.file.path ,
+           filename: req.file.filename,
+       };
+       } else{
+           newListing.image ={
+               url:"https://res.cloudinary.com/dcthudr8s/image/upload/v1756224251/wanderlust_DEV/kc2dy9ety5jo4tpyvjw1.webp",
+               filename:"default"
+           };
+       }
 
        let coordinates = await geocodeLocation(location, country);
        newListing.geometry={type: "Point", coordinates} ;
